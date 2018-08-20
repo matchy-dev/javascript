@@ -1,0 +1,27 @@
+<head>
+    <script src="javascripts/handsontable.full.min.js"></script>
+    <script src="javascripts/ajax.js"></script>
+    <link href="stylesheets/handsontable.full.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <div>
+        URL:<input type="text" name="url" id="url" list="url_list" autocomplete="off" style="width:300px">
+        <datalist id="url_list">
+            {{#each url_list}}
+                <option>{{this.url}}</option>
+            {{/each}}            
+        </datalist>
+    </div>
+    <div>
+        DATA_SET:<input type="text" name="data_set" id="data_set" list="data_set_list" autocomplete="off" style="width:300px">
+        <datalist id="data_set_list">
+        </datalist>
+    </div>
+    <div class="control">
+            <button id="load">load</button>
+            <button id="save">save</button>
+            <button id="save_all_data">save_all_data</button>
+    </div>
+    <div id="data_table"></div> 
+    <script src="javascripts/function.js"></script>
+</body>
