@@ -11,6 +11,15 @@ function ajax(url, method, send_data, res_func){
             var res = {};
             res.status = xhr.status;
             res.data = xhr.response;
+            if (typeof xhr.responseType != "json") {
+                try {
+                    var jsonData = JSON.parse(res.data);
+                    console.log("in ajax2 type:" + typeof jsonData);
+                    res.data = jsonData;
+                } catch (e) {
+                    console.log(e);
+                }
+            }
             res_func(res);
         }
     };
