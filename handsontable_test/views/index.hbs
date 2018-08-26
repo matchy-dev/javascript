@@ -5,7 +5,7 @@
 </head>
 <body>
     <div>
-        URL:<input type="text" name="url" id="url" list="url_list" autocomplete="off" style="width:300px">
+        <span>URL:</span><input type="text" name="url" id="url" list="url_list" autocomplete="off" style="width:300px">
         <datalist id="url_list">
             {{#each url_list}}
                 <option>{{this.url}}</option>
@@ -13,7 +13,7 @@
         </datalist>
     </div>
     <div>
-        DATA_SET:<input type="text" name="data_set" id="data_set" list="data_set_list" autocomplete="off" style="width:300px">
+        <span>DATA_SET:</span><input type="text" name="data_set" id="data_set" list="data_set_list" autocomplete="off" style="width:300px">
         <datalist id="data_set_list">
         </datalist>
     </div>
@@ -21,7 +21,10 @@
             <button id="load">load</button>
             <button id="save">save</button>
             <button id="save_all_data">save_all_data</button>
+            <button id="get_request">GET</button>
+            <button id="post_request">POST</button>
     </div>
+    <form id="send_request_form" style="display:none;" target="_blank"></form>
     <div id="data_table"></div> 
     <script src="javascripts/function.js"></script>
 </body>

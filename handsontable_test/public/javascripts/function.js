@@ -28,6 +28,7 @@ Handsontable.dom.addEvent(load, 'click', function() {
 
 var url = document.getElementById("url");
 var data_set = document.getElementById("data_set");
+var send_request_form = document.getElementById("send_request_form");
 
 Handsontable.dom.addEvent(save_all_data, 'click', function() {
     var out_data = { url: url.value, data_set: data_set.value, data: hot.getData() };
@@ -36,6 +37,39 @@ Handsontable.dom.addEvent(save_all_data, 'click', function() {
         console.log(res.data);
     });
 });
+
+Handsontable.dom.addEvent(get_request, 'click', function() {
+    send_request("GET");
+});
+
+Handsontable.dom.addEvent(post_request, 'click', function() {
+    send_request("POST");
+});
+
+function send_request(method){
+    send_request_form.action = url.value;
+    send_request_form.method = method;
+
+    while(send_request_form.lastChild){
+        send_request_form.removeChild(send_request_form.lastChild);
+    }
+
+    console.log(JSON.stringify(hot.getData()));
+    var input;
+    var table_data = hot.getData();
+    for(var i=0; i<table_data.length; i++){
+        if(table_data[i][0]){
+            console.log(table_data[i]);
+            input = document.createElement("input");
+            input.type="text";
+            input.name = table_data[i][0];
+            input.value = table_data[i][1];
+            send_request_form.appendChild(input);
+        }
+    }
+    send_request_form.submit();
+}
+
 
 url.addEventListener( "change", function(){
     console.log(url);
