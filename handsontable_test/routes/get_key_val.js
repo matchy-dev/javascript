@@ -16,7 +16,7 @@ router.post('/', function(req, res, next) {
         var url = req.body.url;
         console.log("url:" + url);
         console.log("url:" + url);
-        db.all("select distinct key, value from send_data_info where url = ? and data_set = ? order by 1", [req.body.url, req.body.data_set], function(err, row){
+        db.all("select distinct key, value from send_data_info where url = ? and data_set = ? order by id", [req.body.url, req.body.data_set], function(err, row){
             if(err){
                 console.log(err);
                 throw err;

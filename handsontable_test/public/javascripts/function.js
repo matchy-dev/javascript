@@ -55,16 +55,24 @@ function send_request(method){
     }
 
     console.log(JSON.stringify(hot.getData()));
-    var input;
+    var input, key, value;
     var table_data = hot.getData();
     for(var i=0; i<table_data.length; i++){
-        if(table_data[i][0]){
-            console.log(table_data[i]);
-            input = document.createElement("input");
-            input.type="text";
-            input.name = table_data[i][0];
-            input.value = table_data[i][1];
-            send_request_form.appendChild(input);
+        key = table_data[i][0];
+        if(key){
+            key = key.replace(/\r$|\n$|\r\n$/, "");
+            if(key.length>0){
+                console.log(JSON.stringify(table_data[i]) + " " + key + ":" + key.length);
+                input = document.createElement("input");
+                input.type="text";
+                value = table_data[i][0];
+                if(value){
+                    value = value.replace(/\r$|\n$|\r\n$/, "");
+                }
+                input.name = key;
+                input.value = value;
+                send_request_form.appendChild(input);
+            }
         }
     }
     send_request_form.submit();

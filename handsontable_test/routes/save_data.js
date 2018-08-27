@@ -27,7 +27,7 @@ router.post('/', function(req, res, next) {
     });
 
     res.contentType('application/json');
-    var out_str = '{"OK"}';
+    var out_str = '{"RESULT": "OK"}';
     console.log(out_str);
     res.send(out_str);
 });
