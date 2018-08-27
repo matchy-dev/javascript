@@ -65,7 +65,7 @@ function send_request(method){
                 console.log(JSON.stringify(table_data[i]) + " " + key + ":" + key.length);
                 input = document.createElement("input");
                 input.type="text";
-                value = table_data[i][0];
+                value = table_data[i][1];
                 if(value){
                     value = value.replace(/\r$|\n$|\r\n$/, "");
                 }
