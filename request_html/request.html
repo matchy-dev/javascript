@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTTP request</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="data.js"></script>
+</head>
+<body>
+    <div>
+        <div id="menu_bar" class="menu_bar">
+        </div>
+        <div class="control">
+                <button id="get" onclick="get()">GET</button>
+                <button id="post" onclick="post()">POST</button>
+        </div>
+        <div class="url_bar">
+            <div class="label">URL</div>
+            <input id="url" type="text">
+        </div>
+        <hr>
+        <form id="form_id" name="form_id" target="_blank">
+            <div id="param_list" class="param_list">
+                <div class="param_item">
+                    <div class="param_name label">param1</div>
+                    <input class="param_data" type="text">
+                </div>
+                <div class="param_item">
+                    <div class="param_name label">param2</div>
+                    <input class="param_data" type="text">
+                </div>
+                <div class="param_item">
+                    <div class="param_name label">param3</div>
+                    <input class="param_data" type="text">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

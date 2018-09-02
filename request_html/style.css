@@ -1,0 +1,60 @@
+body {
+    padding: 20px;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.menu_bar {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.menu_item {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 1px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #c0c0c0;
+    color: white;
+}
+
+.menu_item:hover{
+    background-color: grey;
+    color: yellow;
+}
+
+.label {
+    width: 30%;
+    vertical-align: center;
+}
+
+.control {
+    display: flex;
+    margin: 10px;
+}
+
+button {
+    font-size: inherit;
+}
+
+.url_bar {
+    display: flex;
+    margin: 10px;
+}
+
+form {
+    margin: 10px;
+}
+
+input {
+    width: 70%;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.param_item {
+    display: flex;
+}
