@@ -37,12 +37,14 @@ body {
 }
 
 button {
-    font-size: inherit;
+    font-family: inherit;
+    font-size: 1em;
 }
 
 .url_bar {
     display: flex;
     margin: 10px;
+    align-items: center;
 }
 
 form {
@@ -57,4 +59,5 @@ input {
 
 .param_item {
     display: flex;
+    align-items: center;
 }
