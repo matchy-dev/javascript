@@ -1,14 +1,5 @@
 var sel_id = 0;
 
-// テキストボックスの値をJSONに保存
-function save_input_data(html_dat, json_dat, key_name){
-    console.log("in save_data:"+ json_dat[key_name]);
-    html_dat.addEventListener("change", function(){
-        console.log("JSON:" + json_dat[key_name] + " HTML:" + html_dat.value);
-        json_dat[key_name] = html_dat.value;
-    },false);
-};
-
 // タブクリック時の処理
 function click_tab(id){
     // タブのスタイルを変更
@@ -51,7 +42,8 @@ function click_tab(id){
         param_dat.type = "text";
         param_dat.name = params[i].name;
         param_dat.value = params[i].value;
-        // save_input_data(param_dat, params[i], "value");
+
+        // 値変更時の処理を登録
         (function(html_dat, json_dat){
             html_dat.addEventListener("change", function(){
                 console.log("JSON:" + json_dat.value+ " HTML:" + html_dat.value);
@@ -63,11 +55,10 @@ function click_tab(id){
     }
 };
 
-// URLの値を保存
+// URL変更時の処理を登録
 var html_url = document.getElementById("url");
 html_url.addEventListener("change", function(){
-    console.log("sel_id:" + sel_id);
-    console.log("JSON:" + conf_data[sel_id].url + " HTML:" + html_url.value);
+    console.log("sel_id:" + sel_id + " JSON:" + conf_data[sel_id].url + " HTML:" + html_url.value);
     conf_data[sel_id].url = html_url.value;
 },false);
 
