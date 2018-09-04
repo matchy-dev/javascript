@@ -17,9 +17,9 @@ Handsontable.dom.addEvent(load, 'click', function() {
       console.log(res.data);
       hot.loadData(res.data);
     });
-  });
+});
 
-  Handsontable.dom.addEvent(save, 'click', function() {
+Handsontable.dom.addEvent(save, 'click', function() {
     console.log(hot.getData());
     ajax('/save_data', 'POST', JSON.stringify(hot.getData()), function(res) {
         console.log(res.data);
