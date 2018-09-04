@@ -8,7 +8,7 @@ var db = new sqlite3.Database(dbPath);
 /* GET home page. */
 router.get('/', function(req, res, next) {
     db.serialize(function(){
-        db.all("select distinct url from send_data_info order by 1", [], function(err, row){
+        db.all("select distinct data_set from request_data_info order by 1", [], function(err, row){
             if(err){
                 console.log(err);
                 throw err;
@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
                 out_data[i] = row[i];
                 console.log(out_data[i]);
             }
-            res.render('index', { title: 'Express', url_list: out_data });
+            res.render('index', { title: 'HTTP Request', data_set_list: out_data });
         });
     });
 });

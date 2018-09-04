@@ -11,6 +11,9 @@
             <td>
                 <input type="text" name="data_set" id="data_set" list="data_set_list" autocomplete="off">
                 <datalist id="data_set_list">
+                    {{#each data_set_list}}
+                    <option>{{this.data_set}}</option>
+                    {{/each}}
                 </datalist>
             </td>
         </tr>

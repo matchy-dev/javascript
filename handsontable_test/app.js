@@ -12,6 +12,8 @@ var getUrlRouter = require('./routes/get_url');
 var getSetDataRouter = require('./routes/get_set_data');
 var getKeyValRouter = require('./routes/get_key_val');
 var saveSendDataRouter = require('./routes/save_send_data');
+var getReqDataListRouter = require('./routes/get_req_data_list');
+var saveReqDataRouter = require('./routes/save_req_data');
 
 var app = express();
 
@@ -33,6 +35,8 @@ app.use('/get_url', getUrlRouter);
 app.use('/get_set_data', getSetDataRouter);
 app.use('/get_key_val', getKeyValRouter);
 app.use('/save_send_data', saveSendDataRouter);
+app.use('/get_req_data_list', getReqDataListRouter);
+app.use('/save_req_data', saveReqDataRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
