@@ -5,7 +5,7 @@
     <link href="stylesheets/style.css" rel="stylesheet" media="screen">
 </head>
 <body>
-    <div>
+    {{!-- <div>
         <span>URL:</span><input type="text" name="url" id="url" list="url_list" autocomplete="off" style="width:300px">
         <datalist id="url_list">
             {{#each url_list}}
@@ -17,7 +17,28 @@
         <span>DATA_SET:</span><input type="text" name="data_set" id="data_set" list="data_set_list" autocomplete="off" style="width:300px">
         <datalist id="data_set_list">
         </datalist>
-    </div>
+    </div> --}}
+    <table>
+        <tr>
+            <td class="label">DATA_SET:</td>
+            <td>
+                <input type="text" name="data_set" id="data_set" list="data_set_list" autocomplete="off">
+                <datalist id="data_set_list">
+                </datalist>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">URL:</td>
+            <td>
+                <input type="text" name="url" id="url" list="url_list" autocomplete="off">
+                <datalist id="url_list">
+                    {{#each url_list}}
+                    <option>{{this.url}}</option>
+                    {{/each}}
+                </datalist>
+            </td>
+        </tr>
+    </table>
     <div class="control">
             <button id="load">load</button>
             <button id="save">save</button>

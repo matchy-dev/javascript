@@ -8,5 +8,16 @@ button {
 }
 
 input {
+  width: 100%;
+  max-width: 800px;
   font: inherit;
+}
+
+table {
+  width: 100%;
+}
+
+.label {
+  width: 5px;
+  white-space: nowrap;
 }
