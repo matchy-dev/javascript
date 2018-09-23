@@ -16,11 +16,13 @@ router.get('/', function(req, res, next) {
 	var stat;
 	var file_date;
 	for(var i=0; i<files.length; i++){
-		stat = fs.statSync(download_path + files[i]);
-		file_date = stat.mtime;
-		console.log(file_date + " " + files[i]);
-		file_data = {name: files[i], date: file_date};
-		file_list.push(file_data);
+		if(files[i] != ".gitkeep"){
+			stat = fs.statSync(download_path + files[i]);
+			file_date = stat.mtime;
+			console.log(file_date + " " + files[i]);
+			file_data = {name: files[i], date: file_date};
+			file_list.push(file_data);
+		}
 	}
 	// リバースソート
 	file_list.sort(function(a, b){
