@@ -1,0 +1,14 @@
+{
+  "name": "telnet-client-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "telnet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "telnet-client": "^0.15.8"
+  }
+}
