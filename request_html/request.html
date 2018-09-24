@@ -16,26 +16,24 @@
                 <button id="get" onclick="get()">GET</button>
                 <button id="post" onclick="post()">POST</button>
         </div>
-        <div class="url_bar">
-            <div class="label">URL</div>
-            <input id="url" type="text">
-        </div>
+        <table>
+            <tr>
+                <td class="label"><div>URL</div></td>
+                <td><input id="url" type="text"></td>
+            </tr>            
+        </table>
         <hr>
         <form id="form_id" name="form_id" target="_blank">
-            <div id="param_list" class="param_list">
-                <div class="param_item">
-                    <div class="param_name label">param1</div>
-                    <input class="param_data" type="text">
-                </div>
-                <div class="param_item">
-                    <div class="param_name label">param2</div>
-                    <input class="param_data" type="text">
-                </div>
-                <div class="param_item">
-                    <div class="param_name label">param3</div>
-                    <input class="param_data" type="text">
-                </div>
-            </div>
+            <table id="param_list" class="param_list">
+                <tr class="param_item">
+                    <td class="label">param1</td>
+                    <td><input class="param_data" type="text"></td>
+                </tr>
+                <tr class="param_item">
+                    <td class="label">param2</td>
+                    <td><input class="param_data" type="text"></td>
+                </tr>
+            </table>
         </form>
     </div>
     <script src="main.js"></script>

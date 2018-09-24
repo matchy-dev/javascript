@@ -25,31 +25,33 @@ function click_tab(id){
     params = conf_data[id].params;
     for(var i=0; i<params.length; i++){
         console.log("name:" + params[i].name + " data:" + params[i].value);
-        var param = document.createElement("div");
+        var param = document.createElement("tr");
         param.className = "param_item";
 
         var param_dat;
         // パラメータ名を作成
-        param_dat = document.createElement("div");
-        param_dat.className = "param_name";
-        param_dat.classList.add("label");
+        param_dat = document.createElement("td");
+        param_dat.className = "label";
         param_dat.innerText = params[i].name;
         param.appendChild(param_dat);
 
+        var input_dat;
         // パラメータの値を作成
-        param_dat = document.createElement("input");
-        param_dat.className = "param_data";
-        param_dat.type = "text";
-        param_dat.name = params[i].name;
-        param_dat.value = params[i].value;
+        param_dat = document.createElement("td");
+        input_dat = document.createElement("input");
+        input_dat.className = "param_data";
+        input_dat.type = "text";
+        input_dat.name = params[i].name;
+        input_dat.value = params[i].value;
+        param_dat.appendChild(input_dat);
 
         // 値変更時の処理を登録
         (function(html_dat, json_dat){
             html_dat.addEventListener("change", function(){
-                console.log("JSON:" + json_dat.value+ " HTML:" + html_dat.value);
+                console.log("JSON:" + json_dat.value + " HTML:" + html_dat.value);
                 json_dat.value = html_dat.value;
             },false);
-        })(param_dat, params[i]);
+        })(input_dat, params[i]);
         param.appendChild(param_dat);
         param_list.appendChild(param);
     }
