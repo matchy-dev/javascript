@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTTP request</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style2.css" />
+    <script src="data.js"></script>
+</head>
+<body>
+    <div>
+        <div id="menu_bar" class="menu_bar">
+        </div>
+        <div class="control">
+                <button id="get" onclick="get()">GET</button>
+                <button id="post" onclick="post()">POST</button>
+        </div>
+        <table>
+            <tr>
+                <td class="label"><div>URL</div></td>
+                <td><input id="url" type="text"></td>
+            </tr>            
+        </table>
+        <hr>
+        <form id="form_id" name="form_id" target="_blank">
+            <table id="param_list" class="param_list">
+                <tr class="param_item">
+                    <td class="label">param1</td>
+                    <td><input class="param_data" type="text"></td>
+                </tr>
+                <tr class="param_item">
+                    <td class="label">param2</td>
+                    <td><input class="param_data" type="text"></td>
+                </tr>
+            </table>
+        </form>
+        <table>
+            <tr>
+                <td class="label">
+                    <div class="inline">
+                        <div>
+                            <!--
+                            <button id="set" onclick="set()">make_json</button>
+                            -->
+                        </div>
+                        <div>
+                            <button id="set" onclick="set()">SET</button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <textarea id="set_data"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="main.js"></script>
+    <script src="main2.js"></script>
+</body>
+</html>
