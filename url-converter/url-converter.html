@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL converter</title>
+    <style>
+        textarea {
+            width: 1000px;
+            max-width: 95%;
+            line-height: 1.5em;
+            height: calc(1.5em * 5);
+        }
+    </style>
+    <script>
+        function swap(){
+            in_text = document.getElementById("in_text")
+            out_text = document.getElementById("out_text")
+            tmp_text = in_text.value
+            in_text.value = out_text.value
+            out_text.value = tmp_text
+        }
+        function convert(){
+            mode_list = document.getElementsByName("mode")
+            for(item of mode_list){
+                if(item.checked){
+                    mode = item.value
+                    break
+                }
+            }
+            console.log("mode:" + mode)
+            in_text = document.getElementById("in_text")
+            console.log("in_text:" + in_text.value)
+            out_text = document.getElementById("out_text")
+            if(mode == "encode"){
+                out_text.value = encodeURI(in_text.value)
+            } else {
+                out_text.value = decodeURI(in_text.value)
+            }
+            console.log("out_text:" + out_text.value)
+        }
+    </script>
+</head>
+<body>
+    <h3>URL converter</h3>
+    <div>
+        <input type="radio" name="mode" value="decode" checked>decode</input>
+        <input type="radio" name="mode" value="encode">encode</input>
+    </div>
+    <div>input</div>
+    <div><textarea id="in_text"></textarea></div>
+    <div><button onclick="swap()">↑↓</button></div>
+    <div>output</div>
+    <div><textarea id="out_text"></textarea></div>
+    <div><button onclick="convert()">convert</button></div>
+</body>
+</html>
